@@ -1,0 +1,29 @@
+# Python #
+##########
+*.pyc
+
+
+# IPython Notebook #
+####################
+.ipynb_checkpoints
+
+# OS generated files #
+######################
+
+# R related #
+#############
+*.Rproj
+
+
+# eclipse related #
+###################
+.project
+.pydevproject
+
+# dataset related #
+###################
+*.csv
+data/
+.Rproj.user
+
+

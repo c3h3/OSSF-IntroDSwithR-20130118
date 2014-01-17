@@ -25,4 +25,22 @@ for (i in 1:4) {
   plot(data_list[[i]],col=i+1)
 }  
 
+ica_result = fastICA(origin, n.comp = 4)
+ica_source = ica_result$S
+dec_data = list()
 
+for (i in 1:4) {
+  temp = ica_source[, i]
+  temp = round((temp - min(temp))/(max(temp) - min(temp)) * max(origin) + 
+                 min(origin))
+  temp = temp - min(temp)
+  temp = Wave(left = temp, samp.rate = 8000, bit = 8)
+  dec_data[[i]] = temp
+  # listen(temp)
+  writeWave(temp, paste("dec_source", as.character(i), ".wav", sep = ""))
+}
+
+par(mfrow=c(4,1))
+for (i in 1:4) {
+  plot(dec_data[[i]],col=i+1)
+}  

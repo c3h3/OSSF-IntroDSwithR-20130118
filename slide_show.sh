@@ -1,2 +1,2 @@
-ipython nbconvert Lecture2_WebCrawler.ipynb --to slides --post serve
+ipython nbconvert LectureSlides.ipynb --to slides --post serve
 
